@@ -53,7 +53,7 @@ def collect_feedback_from_ids(rank_ID, image_paths, im_features, top_k=20):
     
     # 收集相关图像标记
     print("\nPlease enter relevant image numbers (comma-separated, e.g., 1,3,5), press Enter to skip:")
-    positive_input = raw_input("Relevant images: ").strip()
+    positive_input = input("Relevant images: ").strip()
     
     if positive_input:
         try:
@@ -64,7 +64,7 @@ def collect_feedback_from_ids(rank_ID, image_paths, im_features, top_k=20):
     
     # 收集不相关图像标记
     print("\nPlease enter irrelevant image numbers (comma-separated), press Enter to skip:")
-    negative_input = raw_input("Irrelevant images: ").strip()
+    negative_input = input("Irrelevant images: ").strip()
     
     if negative_input:
         try:

@@ -113,23 +113,23 @@ def ransac_verification(query_img, query_kpts, query_des, query_word_indices,
     return results
 
 
-def display_ransac_results(results, top_n=5, show_vis=True):
-    """显示RANSAC验证结果"""
-    top_results = results[:top_n]
+# def display_ransac_results(results, top_n=5, show_vis=True):
+#     """显示RANSAC验证结果"""
+#     top_results = results[:top_n]
     
-    for idx, res in enumerate(top_results, start=1):
-        print("RANSAC result #{0}: {1} (inliers: {2}, ratio: {3:.3f})".format(
-            idx, res["path"], res["inliers"], res["ratio"]))
+#     for idx, res in enumerate(top_results, start=1):
+#         print("RANSAC result #{0}: {1} (inliers: {2}, ratio: {3:.3f})".format(
+#             idx, res["path"], res["inliers"], res["ratio"]))
     
-    if show_vis:
-        top_3_results = results[:3]
-        for idx, res in enumerate(top_3_results, start=1):
-            vis_resized = cv2.resize(res["vis"], (1200, 600))
-            title = "Match #{0}: {1} (inliers: {2}, ratio: {3:.3f})".format(
-                idx, os.path.basename(res["path"]), res["inliers"], res["ratio"])
-            cv2.namedWindow(title, cv2.WINDOW_NORMAL)
-            cv2.imshow(title, vis_resized)
+#     if show_vis:
+#         top_3_results = results[:3]
+#         for idx, res in enumerate(top_3_results, start=1):
+#             vis_resized = cv2.resize(res["vis"], (1200, 600))
+#             title = "Match #{0}: {1} (inliers: {2}, ratio: {3:.3f})".format(
+#                 idx, os.path.basename(res["path"]), res["inliers"], res["ratio"])
+#             cv2.namedWindow(title, cv2.WINDOW_NORMAL)
+#             cv2.imshow(title, vis_resized)
         
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+#         cv2.waitKey(0)
+#         cv2.destroyAllWindows()
 
